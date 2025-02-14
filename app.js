@@ -1318,6 +1318,6 @@ initGameLoop(pool);
 
 
 
-server.listen(PORT, '0.0.0.0',() =>{
-    console.log(`IP: http://${HOSTNAME}:${PORT}`)
+server.listen(PORT, () =>{
+    console.log(`IP: ${HOSTNAME} - Port:${PORT}`)
 });
