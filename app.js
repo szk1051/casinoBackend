@@ -23,7 +23,7 @@ const stripe = stripeReq(process.env.STRIPE_SECRET_KEY);
 
 console.log('Stripe key loaded:', process.env.STRIPE_SECRET_KEY ? 'Yes' : 'No');
 
-
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
