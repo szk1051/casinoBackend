@@ -1,5 +1,5 @@
 //BACKEND
-
+//ez egy teszt kristóftól
 const dotenv = require('dotenv');
 dotenv.config();
 
