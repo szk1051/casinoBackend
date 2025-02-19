@@ -303,8 +303,8 @@ app.post('/api/login', (req, res) => {
                 
                 // Updated cookie settings
                 res.cookie('auth_token', token, {
-                    httpOnly: false,
-                    secure: false,
+                    httpOnly: true,
+                    secure: true,
                     sameSite: 'lax',
                     path: '/',
                     maxAge: 3600000 * 24 * 31 * 12
