@@ -38,8 +38,11 @@ app.use(cors({
     origin: "https://extraordinary-parfait-60b553.netlify.app",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Accept', 'Authorization', 'X-Requested-With', 'Origin'],
-    exposedHeaders: ['Set-Cookie'],
+    allowedHeaders: [
+        'Access-Control-Allow_Origin',
+        'Content-Type',
+        'Authorization'
+    ]
 }));
 
 
@@ -305,7 +308,7 @@ app.post('/api/login', (req, res) => {
                 res.cookie('auth_token', token, {
                     httpOnly: true,
                     secure: true,
-                    sameSite: 'lax',
+                    sameSite: 'none',
                     path: '/',
                     maxAge: 3600000 * 24 * 31 * 12
                 });
