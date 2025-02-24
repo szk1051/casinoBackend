@@ -308,7 +308,7 @@ app.post('/api/login', (req, res) => {
                 res.cookie('auth_token', token, {
                     httpOnly: true,
                     secure: true,
-                    sameSite: 'lax',
+                    sameSite: 'none',
                     maxAge: 3600000 * 24 * 31 * 12
                 });
                 
