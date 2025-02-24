@@ -36,13 +36,13 @@ const HOSTNAME = process.env.HOSTNAME;
 
 app.use(cors({
     origin: "https://extraordinary-parfait-60b553.netlify.app",
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: [
-        'Access-Control-Allow_Origin',
-        'Content-Type',
-        'Authorization'
-    ]
+    credentials: true
+    // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    // allowedHeaders: [
+    //     'Access-Control-Allow_Origin',
+    //     'Content-Type',
+    //     'Authorization'
+    // ]
 }));
 
 
@@ -308,8 +308,7 @@ app.post('/api/login', (req, res) => {
                 res.cookie('auth_token', token, {
                     httpOnly: true,
                     secure: true,
-                    sameSite: 'none',
-                    path: '/',
+                    sameSite: 'lax',
                     maxAge: 3600000 * 24 * 31 * 12
                 });
                 
