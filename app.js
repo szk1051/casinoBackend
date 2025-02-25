@@ -23,7 +23,7 @@ const stripe = stripeReq(process.env.STRIPE_SECRET_KEY);
 
 console.log('Stripe key loaded:', process.env.STRIPE_SECRET_KEY ? 'Yes' : 'No');
 
-
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -35,20 +35,14 @@ const PORT = process.env.PORT;
 const HOSTNAME = process.env.HOSTNAME;
 
 app.use(cors({
-    origin: [
-        'http://127.0.0.1:5500',
-        'http://127.0.0.1:5501',
-        'http://192.168.10.24:5500',
-        'http://192.168.10.24:3000',
-        'http://localhost:5500',
-        'http://localhost:5501',
-        'http://localhost:3000',
-        `http://${HOSTNAME}:3000`
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Accept', 'Authorization', 'X-Requested-With', 'Origin'],
-    exposedHeaders: ['Set-Cookie'],
+    origin: "https://extraordinary-parfait-60b553.netlify.app",
+    credentials: true
+    // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    // allowedHeaders: [
+    //     'Access-Control-Allow_Origin',
+    //     'Content-Type',
+    //     'Authorization'
+    // ]
 }));
 
 
@@ -313,9 +307,9 @@ app.post('/api/login', (req, res) => {
                 
                 // Updated cookie settings
                 res.cookie('auth_token', token, {
-                    httpOnly: true,
-                    secure: true,
-                    sameSite: 'none',
+                    httpOnly: false,
+                    secure: false,
+                    sameSite: 'lax',
                     path: '/',
                     maxAge: 3600000 * 24 * 31 * 12
                 });
@@ -1316,7 +1310,9 @@ initGameLoop(pool);
 
 
 
-
+app.get("/",(req,res) => {
+    res.send("teszt")
+});
 
 
 server.listen(PORT, () =>{
