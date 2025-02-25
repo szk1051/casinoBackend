@@ -814,7 +814,8 @@ const io = new Server(server, {
             'http://192.168.10.24:3000',
             'http://localhost:5500',
             'http://localhost:3000',
-            `http://${HOSTNAME}:3000`
+            `http://${HOSTNAME}:3000`,
+            'https://extraordinary-parfait-60b553.netlify.app'
         ],
         methods: ["GET", "POST"],
         credentials: true,
@@ -831,7 +832,7 @@ async function getLastTenSpins() {
             ORDER BY roundid DESC 
             LIMIT 10
         `);
-        console.log('Retrieved spins:', spins);
+        // console.log('Retrieved spins:', spins);
         return spins.reverse();
     } catch (error) {
         console.error('Error fetching last spins:', error);
