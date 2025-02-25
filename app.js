@@ -308,11 +308,11 @@ app.post('/api/login', (req, res) => {
                 
                 // Updated cookie settings
                 res.cookie('auth_token', token, {
-                    httpOnly: false,
-                    secure: false,
-                    sameSite: 'lax',
+                    httpOnly: true,
+                    secure: true, // Set to true for HTTPS
+                    sameSite: 'none', // Important for cross-domain cookies
                     path: '/',
-                    maxAge: 3600000 * 24 * 31 * 12
+                    maxAge: 3600000 * 24 * 31 * 12 // 1 year
                 });
                 
                 return res.status(200).json({ message: 'Sikeres bejelentkezés' });
