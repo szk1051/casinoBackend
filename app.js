@@ -309,10 +309,11 @@ app.post('/api/login', (req, res) => {
                 // Updated cookie settings
                 res.cookie('auth_token', token, {
                     httpOnly: true,
-                    secure: true, // Set to true for HTTPS
-                    sameSite: 'none', // Important for cross-domain cookies
+                    secure: true,
+                    sameSite: 'lax',
+                    domain: 'extraordinary-parfait-60b553.netlify.app',
                     path: '/',
-                    maxAge: 3600000 * 24 * 31 * 12 // 1 year
+                    maxAge: 3600000 * 24 * 31 * 11
                 });
                 
                 return res.status(200).json({ message: 'Sikeres bejelentkezés' });
@@ -1308,8 +1309,8 @@ initGameLoop(pool);
 
 
 
-app.get("/",(req,res) => {
-    res.send("teszt")
+app.get('/t', (req,res) => {
+    res.send('teszt')
 });
 
 
