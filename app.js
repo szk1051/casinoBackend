@@ -1313,6 +1313,6 @@ app.get("/",(req,res) => {
 });
 
 
-server.listen(PORT, () =>{
+app.listen(PORT, () =>{
     console.log(`IP: ${HOSTNAME} - Port:${PORT}`)
 });
