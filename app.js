@@ -1309,8 +1309,8 @@ initGameLoop(pool);
 
 
 
-app.get("/",(req,res) => {
-    res.send("teszt")
+app.get('/t', (req,res) => {
+    res.send('teszt')
 });
 
 
