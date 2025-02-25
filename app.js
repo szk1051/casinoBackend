@@ -313,7 +313,7 @@ app.post('/api/login', (req, res) => {
                     sameSite: 'lax',
                     domain: 'extraordinary-parfait-60b553.netlify.app',
                     path: '/',
-                    maxAge: 3600000 * 24 * 31 * 12
+                    maxAge: 3600000 * 24 * 31 * 11
                 });
                 
                 return res.status(200).json({ message: 'Sikeres bejelentkezés' });
