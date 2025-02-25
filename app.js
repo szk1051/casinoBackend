@@ -271,6 +271,7 @@ app.post('/api/register', (req, res) => {
 
 //Belépés
 app.post('/api/login', (req, res) => {
+    console.log(req)
     const { email, psw } = req.body;
     const errors = [];
 
@@ -314,7 +315,7 @@ app.post('/api/login', (req, res) => {
                 res.cookie('auth_token', token, {
                     httpOnly: true,
                     secure: true,
-                    sameSite: 'lax',
+                    sameSite: 'none',
                     path: '/',
                     maxAge: 3600000 * 24 * 31 * 12
                 });
