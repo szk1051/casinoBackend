@@ -26,6 +26,7 @@ console.log('Stripe key loaded:', process.env.STRIPE_SECRET_KEY ? 'Yes' : 'No');
 //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 const app = express();
+const server = http.createServer(app);
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieparser());
 app.use('/uploads', express.static('uploads'));
@@ -803,9 +804,6 @@ app.get('/api/roulette/stats', (req, res) => {
 
 
 
-
-
-const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
